@@ -1,62 +1,62 @@
 @echo off
 
-REM 儊僢僙乕僕傪昞帵偡傞
-echo "張棟傪奐巒偟傑偡丅"
+REM メッセ〖ジを山绩する
+echo "借妄を倡幌します。"
 echo.
 
-REM D僪儔僀僽偺僼僅儖僟僣儕乕傪惗惉偡傞
+REM Dドライブのフォルダツリ〖を栏喇する
 set logdate=%date:~0,4%-%date:~5,2%-%date:~8,2%
 tree /f D:\ > "D:\log\tree-log-%logdate%.txt"
 
-REM 僐僺乕尦偲側傞D僪儔僀僽偲僐僺乕愭偲側傞E僪儔僀僽偺僷僗傪巜掕偡傞
+REM コピ〖傅となるDドライブとコピ〖黎となるEドライブのパスを回年する
 set source=D:\
 set destination=E:\
 
 
 
 
-REM Application偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "Application傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Applicationの面のファイルをEドライブにコピ〖する
+echo "ApplicationをEドライブにコピ〖しています。"
 robocopy %source%\Application %destination%\Application /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM C偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "C傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Cの面のファイルをEドライブにコピ〖する
+echo "CをEドライブにコピ〖しています。"
 robocopy %source%\C %destination%\C /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM drivers偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "drivers傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM driversの面のファイルをEドライブにコピ〖する
+echo "driversをEドライブにコピ〖しています。"
 robocopy %source%\drivers %destination%\drivers /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Files偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "Files傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Filesの面のファイルをEドライブにコピ〖する
+echo "FilesをEドライブにコピ〖しています。"
 robocopy %source%\Files %destination%\Files /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" 
 echo.
 
-REM Game/Steam/steamapps/workshop偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo " Game/Steam/steamapps/workshop傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Game/Steam/steamapps/workshopの面のファイルをEドライブにコピ〖する
+echo " Game/Steam/steamapps/workshopをEドライブにコピ〖しています。"
 robocopy %source%\Game\Steam\steamapps\workshop %destination%\Game\Steam\steamapps\workshop /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Game/Steam/steamapps/common/MicrosoftFlightSimulator偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo " Game/Steam/steamapps/common/Beat Saber傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Game/Steam/steamapps/common/MicrosoftFlightSimulatorの面のファイルをEドライブにコピ〖する
+echo " Game/Steam/steamapps/common/Beat SaberをEドライブにコピ〖しています。"
 robocopy %source%\Game\Steam\steamapps\common\MicrosoftFlightSimulator %destination%\Game\Steam\steamapps\common\MicrosoftFlightSimulator /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Game/Steam/steamapps/common/Beat Saber偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo " Game/Steam/steamapps/common/Beat Saber傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Game/Steam/steamapps/common/Beat Saberの面のファイルをEドライブにコピ〖する
+echo " Game/Steam/steamapps/common/Beat SaberをEドライブにコピ〖しています。"
 robocopy %source%\Game\Steam\steamapps\common\"Beat Saber" %destination%\Game\Steam\steamapps\common\"Beat Saber" /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Game/Steam/steamapps/common/assettocorsa偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo " Game/Steam/steamapps/common/Beat Saber傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Game/Steam/steamapps/common/assettocorsaの面のファイルをEドライブにコピ〖する
+echo " Game/Steam/steamapps/common/Beat SaberをEドライブにコピ〖しています。"
 robocopy %source%\Game\Steam\steamapps\common\assettocorsa %destination%\Game\Steam\steamapps\common\assettocorsa /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Game/Steam/steamapps/common/wallpaper_engine偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo " Game/Steam/steamapps/common/Beat Saber傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Game/Steam/steamapps/common/wallpaper_engineの面のファイルをEドライブにコピ〖する
+echo " Game/Steam/steamapps/common/Beat SaberをEドライブにコピ〖しています。"
 robocopy %source%\Game\Steam\steamapps\common\wallpaper_engine %destination%\Game\Steam\steamapps\common\wallpaper_engine /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
@@ -64,43 +64,43 @@ echo.
 
 
 
-REM D僪儔僀僽偺Game僼僅儖僟僣儕乕傪惗惉偡傞
+REM DドライブのGameフォルダツリ〖を栏喇する
 tree D:\Game > "D:\log\tree-game-log-%logdate%.txt"
 
-REM GIMP 2偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "GIMP 2傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM GIMP 2の面のファイルをEドライブにコピ〖する
+echo "GIMP 2をEドライブにコピ〖しています。"
 robocopy %source%\"GIMP 2" %destination%\"GIMP 2" /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM players偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "players傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM playersの面のファイルをEドライブにコピ〖する
+echo "playersをEドライブにコピ〖しています。"
 robocopy %source%\players %destination%\players /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Program Files偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "Program Files傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM Program Filesの面のファイルをEドライブにコピ〖する
+echo "Program FilesをEドライブにコピ〖しています。"
 robocopy %source%\"Program Files" %destination%\"Program Files" /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM WindowsApps偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "WindowsApps傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM WindowsAppsの面のファイルをEドライブにコピ〖する
+echo "WindowsAppsをEドライブにコピ〖しています。"
 robocopy %source%\WindowsApps %destination%\WindowsApps /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM WindowsFile偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "WindowsFile傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM WindowsFileの面のファイルをEドライブにコピ〖する
+echo "WindowsFileをEドライブにコピ〖しています。"
 robocopy %source%\WindowsFile %destination%\WindowsFile /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM STVLERec偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "STVLERec傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM STVLERecの面のファイルをEドライブにコピ〖する
+echo "STVLERecをEドライブにコピ〖しています。"
 robocopy %source%\STVLERec %destination%\STVLERec\D /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM log偺拞偺僼傽僀儖傪E僪儔僀僽偵僐僺乕偡傞
-echo "log傪E僪儔僀僽偵僐僺乕偟偰偄傑偡丅"
+REM logの面のファイルをEドライブにコピ〖する
+echo "logをEドライブにコピ〖しています。"
 robocopy %source%\log %destination%\log /E /mir /R:3 /W:0 /LOG+:D:\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM 儊僢僙乕僕傪昞帵偡傞
-echo "張棟偑姰椆偟傑偟偨丅"
+REM メッセ〖ジを山绩する
+echo "借妄が窗位しました。"
