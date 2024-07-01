@@ -40,7 +40,7 @@ echo.
 
 REM Filesの中のファイルをEドライブにコピーする
 echo "FilesをEドライブにコピーしています。"
-robocopy %source_D%\Files %destination%\D\Files /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "D:\FIles\Workspace\" /XJ
+robocopy %source_D%\Files %destination%\D\Files /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "D:\Files\Workspace" "E:\Files\Workspace"/XJ
 echo.
 
 REM WindowsFileの中のファイルをEドライブにコピーする
@@ -51,7 +51,7 @@ echo.
 
 REM Workspaceの中のファイルをNASにコピーする
 echo "WorkspaceをNASにコピーしています。"
-robocopy %source_WS% %destination_NAS% /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "E:\FIles\Workspace\LLM\text-generation-webui-main\models"
+robocopy %source_WS% %destination_NAS% /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "E:\Files\Workspace\LLM\text-generation-webui-main\models"
 echo.
 
 
