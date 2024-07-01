@@ -1,60 +1,60 @@
 @echo off
 
-REM ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹
-echo "å‡¦ç†ã‚’é–‹å§‹ã—ã¾ã™ã€‚"
+REM ƒƒbƒZ[ƒW‚ğ•\¦‚·‚é
+echo "ˆ—‚ğŠJn‚µ‚Ü‚·B"
 echo.
 
 
-REM Cãƒ‰ãƒ©ã‚¤ãƒ–ã®ãƒ•ã‚©ãƒ«ãƒ€ãƒ„ãƒªãƒ¼ã‚’ç”Ÿæˆã™ã‚‹
+REM Cƒhƒ‰ƒCƒu‚ÌƒtƒHƒ‹ƒ_ƒcƒŠ[‚ğ¶¬‚·‚é
 set logdate=%date:~0,4%-%date:~5,2%-%date:~8,2%
 tree /f C:\ > "E:\.BackUp\log\C\C-tree-log-%logdate%.txt"
 
-REM Dãƒ‰ãƒ©ã‚¤ãƒ–ã®ãƒ•ã‚©ãƒ«ãƒ€ãƒ„ãƒªãƒ¼ã‚’ç”Ÿæˆã™ã‚‹
+REM Dƒhƒ‰ƒCƒu‚ÌƒtƒHƒ‹ƒ_ƒcƒŠ[‚ğ¶¬‚·‚é
 set logdate=%date:~0,4%-%date:~5,2%-%date:~8,2%
 tree /f D:\ > "E:\.BackUp\log\D\D-tree-log-%logdate%.txt"
 
-REM Eãƒ‰ãƒ©ã‚¤ãƒ–ã®WorkSpaceãƒ•ã‚©ãƒ«ãƒ€ãƒ„ãƒªãƒ¼ã‚’ç”Ÿæˆã™ã‚‹
+REM Eƒhƒ‰ƒCƒu‚ÌWorkSpaceƒtƒHƒ‹ƒ_ƒcƒŠ[‚ğ¶¬‚·‚é
 set logdate=%date:~0,4%-%date:~5,2%-%date:~8,2%
 tree /f E:\Files\Workspace > "E:\.BackUp\log\Workspace\WS-tree-log-%logdate%.txt"
 
-REM ã‚³ãƒ”ãƒ¼å…ƒã¨ãªã‚‹Dãƒ‰ãƒ©ã‚¤ãƒ–ã¨ã‚³ãƒ”ãƒ¼å…ˆã¨ãªã‚‹Eãƒ‰ãƒ©ã‚¤ãƒ–ã®ãƒ‘ã‚¹ã‚’æŒ‡å®šã™ã‚‹
+REM ƒRƒs[Œ³‚Æ‚È‚éDƒhƒ‰ƒCƒu‚ÆƒRƒs[æ‚Æ‚È‚éEƒhƒ‰ƒCƒu‚ÌƒpƒX‚ğw’è‚·‚é
 set source_C=C:\
 set source_D=D:\
 set source_WS=E:\Files\Workspace\
 
 set destination=E:\.BackUp\
-set destination_NAS=W:\Workspace
+set destination_NAS=W:\Workspace\
 
 
 
 
-REM Applicationã®ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
-echo "Applicationã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã—ã¦ã„ã¾ã™ã€‚"
+REM Application‚Ì’†‚Ìƒtƒ@ƒCƒ‹‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚·‚é
+echo "Application‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚µ‚Ä‚¢‚Ü‚·B"
 robocopy %source_D%\Application %destination%\D\Application /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Cã®ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
-echo "Cã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã—ã¦ã„ã¾ã™ã€‚"
+REM C‚Ì’†‚Ìƒtƒ@ƒCƒ‹‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚·‚é
+echo "C‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚µ‚Ä‚¢‚Ü‚·B"
 robocopy %source_D%\C %destination%\D\C /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN"
 echo.
 
-REM Filesã®ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
-echo "Filesã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã—ã¦ã„ã¾ã™ã€‚"
-robocopy %source_D%\Files %destination%\D\Files /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" 
+REM Files‚Ì’†‚Ìƒtƒ@ƒCƒ‹‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚·‚é
+echo "Files‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚µ‚Ä‚¢‚Ü‚·B"
+robocopy %source_D%\Files %destination%\D\Files /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "D:\FIles\Workspace\" /XJ
 echo.
 
-REM WindowsFileã®ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
-echo "WindowsFileã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã—ã¦ã„ã¾ã™ã€‚"
+REM WindowsFile‚Ì’†‚Ìƒtƒ@ƒCƒ‹‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚·‚é
+echo "WindowsFile‚ğEƒhƒ‰ƒCƒu‚ÉƒRƒs[‚µ‚Ä‚¢‚Ü‚·B"
 robocopy %source_D%\WindowsFile %destination%\D\WindowsFile /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" 
 echo.
 
 
-REM Workspaceã®ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
-echo "Workspaceã‚’Eãƒ‰ãƒ©ã‚¤ãƒ–ã«ã‚³ãƒ”ãƒ¼ã—ã¦ã„ã¾ã™ã€‚"
-robocopy %source_WS% %destination_NAS% /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "%source_WS%\LLM\text-generation-webui-main\models"
+REM Workspace‚Ì’†‚Ìƒtƒ@ƒCƒ‹‚ğNAS‚ÉƒRƒs[‚·‚é
+echo "Workspace‚ğNAS‚ÉƒRƒs[‚µ‚Ä‚¢‚Ü‚·B"
+robocopy %source_WS% %destination_NAS% /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "E:\FIles\Workspace\LLM\text-generation-webui-main\models"
 echo.
 
 
 
-REM ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹
-echo "å‡¦ç†ãŒå®Œäº†ã—ã¾ã—ãŸã€‚"
+REM ƒƒbƒZ[ƒW‚ğ•\¦‚·‚é
+echo "ˆ—‚ªŠ®—¹‚µ‚Ü‚µ‚½B"
