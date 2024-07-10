@@ -21,6 +21,7 @@ REM コピー元となるDドライブとコピー先となるEドライブのパスを指定する
 set source_C=C:\
 set source_D=D:\
 set source_WS=E:\Files\Workspace\
+set source_WS_D=D:\Files\WorkspaceD\
 
 set destination=E:\.BackUp\
 set destination_NAS=W:\Workspace\
@@ -54,6 +55,10 @@ echo "WorkspaceをNASにコピーしています。"
 robocopy %source_WS% %destination_NAS% /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" "E:\Files\Workspace\LLM\text-generation-webui-main\models"
 echo.
 
+REM Workspaceの中のファイルをNASにコピーする
+echo "WorkspaceDをNASにコピーしています。"
+robocopy %source_WS_D% %destination_NAS% /E /mir /R:3 /W:0 /LOG+:E:\.BackUp\log\robocopy-log-%logdate%.txt /DCOPY:DAT /MT:19 /xd "System Volume Information" "$RECYCLE.BIN" 
+echo.
 
 
 REM メッセージを表示する
